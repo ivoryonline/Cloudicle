@@ -1,0 +1,216 @@
+:root {
+    --fontColor: #e8e8e8;
+    --bgColor: #151515;
+    --borderColor: #222;
+    --dropShadow: 0, 0, 0;
+    --linkColor: #409cf6;
+    --linkHover: #b2daff;
+    --navColor: #7db1e1;
+    --shadow1: #000;
+    --shadow2: #409cf6;
+    --shadow3: #1a3dba;
+    --hrColor: #a9a9a9;
+    --h2Color: #999;
+    --headColor: #333;
+    --h1Gradient1: 70, 107, 143;
+    --h1Gradient2: 100, 115, 112;
+}
+
+/* Rubik regular */
+@font-face {
+    font-family: 'Lexend'; /* Using same font family name for blending between English & Russian ^^*/
+    font-style: normal;
+    font-weight: 400;
+    src: url('https://assets.vivwebz.net/Rubik-Regular.ttf') format('truetype');
+    unicode-range: U+0400-04FF, U+0500-052F;
+}
+
+@font-face {
+    font-family: 'Lexend';
+    font-style: normal;
+    font-weight: 700;
+    src: url('https://assets.vivwebz.net/Rubik-Bold.ttf') format('truetype');
+    unicode-range: U+0400-04FF, U+0500-052F;
+}
+
+/* latin */
+@font-face {
+    font-family: 'Lexend';
+    font-style: normal;
+    font-weight: 400;
+    src: url("https://assets.vivwebz.net/lexend-latin-400-normal.woff2") format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* latin-ext */
+@font-face {
+    font-family: 'Lexend';
+    font-style: normal;
+    font-weight: 400;
+    src: url("https://assets.vivwebz.net/lexend-latin-ext-400-normal.woff2") format('woff2');
+    unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+    font-family: 'Lexend';
+    font-style: normal;
+    font-weight: 700;
+    src: url("https://assets.vivwebz.net/lexend-latin-700-normal.woff2") format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* latin-ext */
+@font-face {
+    font-family: 'Lexend';
+    font-style: normal;
+    font-weight: 700;
+    src: url("https://assets.vivwebz.net/lexend-latin-ext-700-normal.woff2") format('woff2');
+    unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    cursor: url(https://yatagarasu.nekoweb.org/custom%20cursor/roundynormal.cur), default !important;
+    scrollbar-width: none;
+}
+
+html::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    margin: 0;
+    background-image: url('https://assets.vivwebz.net/topography.png');
+    color: var(--fontColor);
+    font-family: 'Lexend', 'Rubik', Arial, sans-serif;
+    font-size: 16px;
+    font-size: 0.9em;
+}
+
+.site-center {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    min-height: 100vh;
+    backdrop-filter: invert(1);
+    -webkit-backdrop-filter: invert(1);
+}
+
+.posts-vertical {
+    width: 1080px;
+    margin: 40px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4em;
+}
+
+header {
+    margin-bottom: 0.4em;
+    font-weight: 600;
+}
+
+.top {
+    color: var(--navColor);
+    text-shadow:
+        1px 1px 2px var(--shadow1),
+        0 0 25px var(--shadow2),
+        0 0 5px var(--shadow3);
+    font-size: 1.3em;
+    text-align: right;
+    font-style: italic;
+    margin-bottom: 0.4em;
+}
+
+.post {
+    background: var(--bgColor);
+    border: 1px solid var(--borderColor);
+    box-shadow: 2px 2px 1px rgba(var(--dropShadow), 0.3);
+    width: 100%;
+    margin-bottom: 0.4em;
+}
+
+.post h1 {
+    background: linear-gradient(
+        90deg,
+        rgba(var(--h1Gradient1), 0.7) 10%,
+        rgba(var(--h1Gradient2), 0.6) 60%,
+        rgba(255, 255, 255, 0) 90%
+    );
+    margin: 0;
+    padding: 0.4em 0.8em;
+    font-size: 1.1em;
+    font-weight: 600;
+    position: relative;
+}
+
+.post h2 {
+    color: var(--h2Color);
+    font-size: 1em;
+    margin: 0.8em;
+    font-weight: 600;
+}
+
+.post-date {
+    margin: 0.8em;
+    color: var(--h2Color);
+    font-size: 1em;
+}
+
+.post-content {
+    margin: 0.8em;
+}
+
+.post-content p {
+    margin: 0.8em;
+}
+
+.post-content img {
+    max-width: 100%;
+    max-height: 500px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    display: block;
+    margin: 0.8em auto;
+    cursor: pointer;
+}
+
+.post-content strong {
+    font-weight: 700;
+}
+
+.post-content em {
+    font-style: italic;
+}
+
+.post-content a {
+    color: var(--linkColor);
+    text-decoration: none;
+}
+
+.post-content a:visited {
+    color: var(--linkColor);
+}
+
+.post-content a:hover {
+    color: var(--linkHover);
+    cursor: url(https://yatagarasu.nekoweb.org/custom%20cursor/roundyhand.cur), pointer;
+    text-decoration: underline;
+    text-decoration-style: dotted;
+}
+
+.post-content a:active {
+    color: var(--linkHover);
+}
+
+@media only screen and (max-width: 1100px) {
+    .posts-vertical {
+        width: 100%;
+        margin: 0.4em;
+    }
+}
